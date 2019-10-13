@@ -4,18 +4,26 @@ namespace sudoku {
 
 std::istream &operator>>(std::istream &input, table &t) {
 
-  for (auto &row : t)
+  for (auto &row : t){
     for (auto &el : row)
       input >> el;
+
+    char newline ;
+    input >> newline ;
+    static_assert
+
+  }
 
   return input;
 }
 
 std::ostream &operator<<(std::ostream &output, const table &t) {
 
-  for (auto &row : t)
+  for (auto &row : t){
     for (auto &el : row)
       output << el;
+    output << std::endl;
+  }
   return output;
 }
 
