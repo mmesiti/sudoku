@@ -196,11 +196,12 @@ Table heuristics1(Table t, int max_iterations) {
     auto assumptions = sudoku::get_simple_assumption_list(admitted_table);
 
     for (auto &exclusive_assumptions : assumptions) {
-      auto v = sudoku::apply_parallel_assumptions(exclusive_assumptions,
+      auto admitted_tables = sudoku::apply_parallel_assumptions(exclusive_assumptions,
                                                   admitted_table);
-      admitted_table = v[0];
-      if (is_complete(admitted_table))
-        break;
+      admitted_table = admitted_tables[0];
+      auto it = std::find_if(admitted_tables.begin(),admitted_tables.end(),is_complete);
+
+      if(it != admitted_tables.end()) return admitted_to_table(*it);
     }
     ++iteration_count;
   }

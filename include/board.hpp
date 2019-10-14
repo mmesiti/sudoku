@@ -8,7 +8,7 @@
 namespace sudoku {
 using Table = std::array<std::array<int, 9>, 9>;
 using Admitted = std::array<std::array<std::array<bool, 9>, 9>, 9>;
-using Assumption = std::tuple<int, int>, int>;
+using Assumption = std::tuple<int, int, int>;
 
 std::istream &operator>>(std::istream &, Table &);
 std::ostream &operator<<(std::ostream &, const Table &);
