@@ -163,11 +163,11 @@ bool is_complete(const Admitted &admitted) {
   });
 }
 
-Table heuristics1(Table t) {
+Table heuristics1(Table t, int max_iterations) {
   int iteration_count = 0;
 
   sudoku::Admitted admitted_table = sudoku::table_to_admitted(t);
-  while (not sudoku::is_complete(admitted_table)) {
+  while (not sudoku::is_complete(admitted_table) and iteration_count < max_iterations) {
     auto assumptions = sudoku::get_simple_assumption_list(admitted_table);
 
     for (auto &assumption : assumptions) {
@@ -175,10 +175,10 @@ Table heuristics1(Table t) {
       auto v = sudoku::apply_parallel_assumptions(parallel_assumptions,
                                                   admitted_table);
       admitted_table = v[0];
-      ++iteration_count;
       if (is_complete(admitted_table))
         break;
     }
+    ++iteration_count;
   }
   std::cout << "Iteration count: " << iteration_count << std::endl;
   return admitted_to_table(admitted_table);

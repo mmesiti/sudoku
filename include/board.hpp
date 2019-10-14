@@ -27,5 +27,5 @@ get_simple_assumption_list(const Admitted &admitted_table);
 
 bool is_complete(const Admitted& admitted);
 
-Table heuristics1(Table t);
+Table heuristics1(Table t, int max_iterations = 10000);
 } // namespace sudoku
