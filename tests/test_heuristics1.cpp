@@ -1,7 +1,5 @@
 #include "board.hpp"
-#include <fstream>
 #include <iostream>
-#include <sstream>
 
 int main(int argc, char **argv) {
 
@@ -21,11 +19,16 @@ int main(int argc, char **argv) {
   std::cout << "End - reference:" << std::endl;
   std::cout << t_end_read;
 
-  sudoku::Table t_end = sudoku::heuristics1(t);
+  auto t_end = sudoku::heuristics1(t);
   std::cout << "End - heuristics1:" << std::endl;
-  std::cout << t_end;
+  if(t_end) std::cout << *t_end;
+  else { 
+      std::cout << "Failed" << std::endl;
+      return 1;
+  }
+      
 
-  if (t_end != t_end_read)
+  if (*t_end != t_end_read)
     return 1;
   else
     return 0;
