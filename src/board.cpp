@@ -64,7 +64,6 @@ Table read_board(std::string filename) {
   Table t;
   std::fstream f(filename);
   f >> t;
-  ;
   f.close();
   return t;
 }

@@ -1,6 +1,7 @@
 # Sudoku solver project
 
 Will we get to the end of this? Who knows.
+EDIT: We did it!
 
 ## Compiling instructions
 
