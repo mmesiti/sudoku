@@ -1,12 +1,8 @@
-configure:
+all_test:
     script:
-        - mkdir build && cd buildd && cmake 
+        - mkdir build 
+        - cd build 
+        - cmake ..
+        - make 
+        - make test
 
-compilation:
-    script:
-        - cd build && make 
-
-test:
-    script:
-        - cd build && make test
-        
