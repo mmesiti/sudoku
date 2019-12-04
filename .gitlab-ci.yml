@@ -1,0 +1,12 @@
+configure:
+    script:
+        - mkdir build && cd buildd && cmake 
+
+compilation:
+    script:
+        - cd build && make 
+
+test:
+    script:
+        - cd build && make test
+        
