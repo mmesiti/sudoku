@@ -1,7 +1,6 @@
-#include "board.hpp"
-#include <fstream>
+#include "common.hpp"
+#include "algorithm1.hpp"
 #include <iostream>
-#include <sstream>
 
 int main(int argc, char **argv) {
 
@@ -21,16 +20,16 @@ int main(int argc, char **argv) {
   std::cout << "End - reference:" << std::endl;
   std::cout << t_end_read;
 
-  auto t_end = sudoku::heuristics2(t);
-  std::cout << "End - heuristics2:" << std::endl;
+  auto t_end = sudoku::algorithm1(t);
+  std::cout << "End - algorithm1:" << std::endl;
   if(t_end) std::cout << *t_end;
   else { 
       std::cout << "Failed" << std::endl;
       return 1;
   }
- 
+      
 
-  if (t_end != t_end_read)
+  if (*t_end != t_end_read)
     return 1;
   else
     return 0;

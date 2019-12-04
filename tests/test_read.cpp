@@ -1,4 +1,4 @@
-#include "board.hpp"
+#include "common.hpp"
 #include <fstream>
 #include <iostream>
 #include <sstream>

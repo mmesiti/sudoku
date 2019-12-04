@@ -1,4 +1,5 @@
-#include "board.hpp"
+#include "common.hpp"
+#include "algorithm1.hpp"
 #include <iostream>
 
 int main(int argc, char **argv) {

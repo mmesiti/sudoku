@@ -57,7 +57,7 @@ the "certain" information,
 i.e. when there is only one possiblity for a number in a certain position
 all the consequences of that piece of knowledge are applied and the "search space" is pruned 
 accordingly. 
-This is not enough to solve all Puzzles (see, e.g., `example_tables/hard.txt'). 
+This is not enough to solve all puzzles (see, e.g., `example_tables/hard.txt'). 
 
 ### Algorithm 2
 
