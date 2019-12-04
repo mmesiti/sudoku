@@ -5,11 +5,11 @@ add_executable(test_verify_assumption test_verify_assumption.cpp )
 add_executable(test_algorithm1 test_algorithm1.cpp )
 add_executable(test_algorithm2 test_algorithm2.cpp )
 
-target_link_libraries(test_read libcommon)
-target_link_libraries(test_convert_to_admitted libcommon)
-target_link_libraries(test_algorithm1 libcommon libalgo1)
-target_link_libraries(test_algorithm2 libcommon libalgo2)
-target_link_libraries(test_verify_assumption libcommon libalgo1)
+target_link_libraries(test_read common)
+target_link_libraries(test_convert_to_admitted common)
+target_link_libraries(test_algorithm1 common algo1)
+target_link_libraries(test_algorithm2 common algo2)
+target_link_libraries(test_verify_assumption common algo1)
 
 
 configure_file(../example_tables/table1.txt ${CMAKE_CURRENT_BINARY_DIR}/table1.txt)

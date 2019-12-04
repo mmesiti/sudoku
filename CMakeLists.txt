@@ -6,17 +6,17 @@ enable_testing()
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
 
-add_library(libcommon STATIC src/common.cpp)
-target_compile_features(libcommon PUBLIC cxx_std_17)
+add_library(common STATIC src/common.cpp)
+target_compile_features(common PUBLIC cxx_std_17)
 
-add_library(libalgo1 STATIC src/algorithm1.cpp)
-target_compile_features(libalgo1 PUBLIC cxx_std_17)
+add_library(algo1 STATIC src/algorithm1.cpp)
+target_compile_features(algo1 PUBLIC cxx_std_17)
 
-add_library(libalgo2 STATIC src/algorithm2.cpp)
-target_compile_features(libalgo2 PUBLIC cxx_std_17)
+add_library(algo2 STATIC src/algorithm2.cpp)
+target_compile_features(algo2 PUBLIC cxx_std_17)
 
 add_executable(sudoku_solver src/main/main.cpp )
-target_link_libraries(sudoku_solver libcommon libalgo2)
+target_link_libraries(sudoku_solver common algo2)
 
 add_subdirectory(tests)
 
