@@ -1,8 +1,18 @@
-all_test:
+image : madduci/docker-linux-cpp:latest
+
+configure: 
     script:
         - mkdir build 
         - cd build 
         - cmake ..
+       
+build : 
+    script:
+        - cd build
         - make 
+        
+test:
+    script:
+        - cd build
         - make test
 
