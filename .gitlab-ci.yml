@@ -2,6 +2,7 @@ image : ubuntu
 
 before_script:
  - apt-get update --yes
+ - apt-get install --yes gcc
  - apt-get install --yes cmake
 
 configure: 
