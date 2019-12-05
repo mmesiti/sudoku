@@ -13,11 +13,15 @@ configure:
        
 build : 
     script:
+        - mkdir build 
         - cd build
+        - cmake ..
         - make 
         
 test:
     script:
+        - mkdir build 
         - cd build
+        - cmake ..
         - make test
 
