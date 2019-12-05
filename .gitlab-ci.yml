@@ -5,23 +5,11 @@ before_script:
  - apt-get install --yes g++
  - apt-get install --yes cmake
 
-configure: 
+all: 
     script:
         - mkdir build 
         - cd build 
         - cmake ..
-       
-build : 
-    script:
-        - mkdir build 
-        - cd build
-        - cmake ..
         - make 
-        
-test:
-    script:
-        - mkdir build 
-        - cd build
-        - cmake ..
         - make test
 
