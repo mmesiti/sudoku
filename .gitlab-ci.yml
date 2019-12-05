@@ -1,4 +1,4 @@
-image : madduci/docker-linux-cpp:latest
+image : ubuntu-latest
 
 configure: 
     script:
