@@ -16,6 +16,3 @@ target_compile_features(algo2 PUBLIC cxx_std_17)
 add_executable(sudoku_solver src/main/main.cpp )
 target_link_libraries(sudoku_solver common algo2)
 
-enable_testing()
-add_subdirectory(tests)
-
