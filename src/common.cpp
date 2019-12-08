@@ -7,6 +7,7 @@
 #include <set>
 #include <sstream>
 #include <string>
+#include "git_commit.h"
 
 namespace sudoku {
 

@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <optional>
+#include "git_commit.h"
 
 namespace sudoku {
 

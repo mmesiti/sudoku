@@ -3,8 +3,11 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "git_commit.h"
 
 int main(int argc, char **argv) {
+
+  std::cout << "Sudoku solver, commit " << GITCOMMIT << std::endl;
 
   if (argc < 2) {
     std::cout << "Pass the file name as the first argument.";
