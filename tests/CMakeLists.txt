@@ -17,11 +17,11 @@ configure_file(output_table2.txt output_table2.txt COPYONLY)
 add_test(test_read_ex1 test_read table1.txt ) 
 add_test(test_convert_to_admitted test_convert_to_admitted table1.txt ) 
 
-add_test(test_algorithms_11 test_algorithms table1.txt output_table1.txt 1) 
-add_test(test_algorithms_12 test_algorithms table2.txt output_table2.txt 2) 
-
-add_test(test_algorithms_21 test_algorithms table1.txt output_table1.txt 1) 
-add_test(test_algorithms_22 test_algorithms table2.txt output_table2.txt 2) 
+foreach( ALGORITHM IN ITEMS 1 2)
+    foreach(TABLE IN ITEMS table1.txt table2.txt) 
+        add_test(test_algorithms_${ALGORITHM}_${TABLE} test_algorithms ${TABLE} output_${TABLE} ${ALGORITHM}) 
+    endforeach()
+endforeach()
 
 add_test(test_verify_assumption1 test_verify_assumption table1.txt output_table1.txt ) 
 add_test(test_verify_assumption1 test_verify_assumption table2.txt output_table2.txt ) 
