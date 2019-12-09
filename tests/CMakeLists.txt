@@ -1,4 +1,3 @@
-include(CTest)
 add_executable(test_read test_read.cpp )
 add_executable(test_convert_to_admitted test_convert_to_admitted.cpp )
 add_executable(test_verify_assumption test_verify_assumption.cpp )
